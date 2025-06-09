@@ -1,0 +1,246 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: linear-gradient(135deg, #6b4f1d, #b28c48);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.15);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  opacity: 0.85;
+  margin-bottom: 1.8rem;
+}
+
+header img {
+  width: 90vw;
+  max-width: 300px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgb(0 0 0 / 0.3);
+  border: 4px solid #c7a25e;
+  user-select: none;
+}
+
+.madeira-section {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.madeira-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  width: 30%;
+  margin-bottom: 2.6rem;
+
+  padding: 1rem 1.5rem;
+  cursor: default;
+  transition: transform 0.3s ease;
+}
+
+.madeira-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
+}
+
+.madeira-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.15);
+  user-select: none;
+}
+
+.madeira-desc h3 {
+  font-size: 1.7rem;
+  color: #6b4f1d;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.madeira-desc p {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  user-select: text;
+  text-align: center;
+}
+
+.contato {
+  background: #6b4f1d;
+  color: white;
+  padding: 3rem 1rem 4rem;
+  text-align: center;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  box-shadow: 0 -4px 10px rgb(0 0 0 / 0.15);
+  user-select: none;
+}
+
+.contato h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.contato a {
+  background: #1bff50;
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 5px 12px rgb(217 148 36 / 0.7);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  user-select: text;
+}
+
+.contato a:hover,
+.contato a:focus {
+  background-color: #bf7f1d;
+  box-shadow: 0 8px 18px rgb(191 127 29 / 0.9);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .madeira-section {
+    flex-direction: column;
+    gap: 2.6rem;
+  }
+  .madeira-item {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .madeira-item img {
+    height: 220px;
+  }
+}
+
+/* Aqui a mágica pro celular: scroll horizontal com cards lado a lado */
+@media (max-width: 768px) {
+  .madeira-section {
+    flex-direction: row;      /* mantém os cards em linha */
+    flex-wrap: nowrap;        /* sem quebra de linha */
+    overflow-x: auto;         /* permite rolagem horizontal */
+    gap: 1rem;
+    padding-bottom: 1rem;     /* espaço pra scroll */
+  }
+  .madeira-item {
+    width: 100%;              /* largura que cabe legal no celular */
+    flex-shrink: 0;           /* não encolhe */
+    margin-bottom: 0;
+  }
+  .madeira-item img {
+    height: 160px;            /* altura da imagem menor no celular */
+  }
+  .contato h2 {
+    font-size: 2rem;
+  }
+}
+
+
+nav {
+  background: #28a745;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.menu-btn {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  user-select: none;
+}
+ul.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+ul.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+ul.menu li a:hover {
+  color: #18bc9c;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+  ul.menu {
+    position: fixed;
+    top: 60px;
+    right: -250px;
+    width: 200px;
+    height: 100%;
+    background: #34495e;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+  }
+  ul.menu.active {
+    right: 0;
+  }
+}
+
