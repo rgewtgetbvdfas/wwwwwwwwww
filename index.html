@@ -8,6 +8,13 @@
 </head>
 <body>
 
+  <div class="aviso" id="aviso">
+  <div class="aviso-content">
+    <p>Bem-vindo! De agora em diante será o site da nossa madereira ConstruMab dês de já Agradeço.</p>
+    <button onclick="fecharAviso()">Tudo bem</button>
+  </div>
+</div>
+
   <nav>
   <div class="logo">ConstruMab</div>
   <div class="menu-btn" id="menu-btn">&#9776;</div>
@@ -141,6 +148,13 @@
     }
   });
 </script>
+
+<script>
+  function fecharAviso() {
+    document.getElementById('aviso').style.display = 'none';
+  }
+</script>
+
 
 </body>
 
