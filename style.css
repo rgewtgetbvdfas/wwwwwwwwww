@@ -244,3 +244,21 @@ ul.menu li a:hover {
   }
 }
 
+
+@media (max-width: 768px) {
+  .segunda-fileira {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  .segunda-fileira .madeira-item {
+    width: 100%;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+  .segunda-fileira .madeira-item img {
+    height: 160px;
+  }
+}
